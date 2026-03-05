@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   FONT FACES — Amma's Naturalz Cashew Value Chain Platform
+   ============================================================ */
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("/assets/fonts/Fraunces.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("/assets/fonts/CabinetGrotesk.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("/assets/fonts/Satoshi.woff2") format("woff2");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ============================================================
+   DESIGN TOKENS — Earthy Commodity Platform
+   Palette: Warm Amber/Gold, Cream/Ivory, Deep Forest Green,
+            Warm Brown, Muted Terracotta
+   ============================================================ */
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Backgrounds — Ivory/Cream base */
+    --background: 0.97 0.012 85;
+    --foreground: 0.22 0.04 50;
+
+    /* Cards — Soft warm white */
+    --card: 0.99 0.005 85;
+    --card-foreground: 0.22 0.04 50;
+
+    /* Popovers */
+    --popover: 0.99 0.005 85;
+    --popover-foreground: 0.22 0.04 50;
+
+    /* Primary — Deep Forest Green */
+    --primary: 0.35 0.09 155;
+    --primary-foreground: 0.98 0.005 85;
+
+    /* Secondary — Warm Amber/Gold */
+    --secondary: 0.88 0.1 80;
+    --secondary-foreground: 0.2 0.05 50;
+
+    /* Muted — Soft cream */
+    --muted: 0.94 0.015 80;
+    --muted-foreground: 0.5 0.03 55;
+
+    /* Accent — Terracotta */
+    --accent: 0.72 0.12 45;
+    --accent-foreground: 0.98 0.005 85;
+
+    /* Destructive */
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* Borders */
+    --border: 0.88 0.02 75;
+    --input: 0.9 0.015 80;
+    --ring: 0.5 0.1 155;
+
+    /* Chart colors — earthy commodity palette */
+    --chart-1: 0.72 0.15 50;
+    --chart-2: 0.42 0.1 155;
+    --chart-3: 0.65 0.13 80;
+    --chart-4: 0.55 0.1 30;
+    --chart-5: 0.78 0.08 100;
+
+    /* Sidebar */
+    --sidebar: 0.25 0.055 155;
+    --sidebar-foreground: 0.92 0.02 80;
+    --sidebar-primary: 0.72 0.15 75;
+    --sidebar-primary-foreground: 0.15 0.04 50;
+    --sidebar-accent: 0.32 0.07 155;
+    --sidebar-accent-foreground: 0.92 0.02 80;
+    --sidebar-border: 0.3 0.06 155;
+    --sidebar-ring: 0.72 0.15 75;
+
+    /* Custom tokens */
+    --gold: 0.78 0.16 75;
+    --gold-light: 0.92 0.1 82;
+    --gold-dark: 0.58 0.14 68;
+    --forest: 0.28 0.08 155;
+    --forest-light: 0.42 0.1 155;
+    --forest-dark: 0.18 0.06 155;
+    --cream: 0.97 0.012 85;
+    --cream-dark: 0.92 0.02 80;
+    --brown: 0.42 0.09 55;
+    --terracotta: 0.62 0.14 40;
+  }
+
+  .dark {
+    --background: 0.16 0.025 155;
+    --foreground: 0.95 0.015 85;
+    --card: 0.2 0.03 155;
+    --card-foreground: 0.95 0.015 85;
+    --popover: 0.22 0.03 155;
+    --popover-foreground: 0.95 0.015 85;
+    --primary: 0.72 0.15 75;
+    --primary-foreground: 0.15 0.04 155;
+    --secondary: 0.25 0.04 155;
+    --secondary-foreground: 0.95 0.015 85;
+    --muted: 0.22 0.03 155;
+    --muted-foreground: 0.65 0.03 80;
+    --accent: 0.72 0.12 45;
+    --accent-foreground: 0.98 0.005 85;
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.205 0 0;
+    --border: 0.28 0.04 155;
+    --input: 0.28 0.04 155;
+    --ring: 0.72 0.15 75;
+    --chart-1: 0.78 0.18 75;
+    --chart-2: 0.55 0.14 155;
+    --chart-3: 0.72 0.15 50;
+    --chart-4: 0.65 0.12 30;
+    --chart-5: 0.85 0.1 100;
+    --sidebar: 0.18 0.03 155;
+    --sidebar-foreground: 0.95 0.015 85;
+    --sidebar-primary: 0.72 0.15 75;
+    --sidebar-primary-foreground: 0.15 0.04 155;
+    --sidebar-accent: 0.25 0.04 155;
+    --sidebar-accent-foreground: 0.95 0.015 85;
+    --sidebar-border: 0.28 0.04 155;
+    --sidebar-ring: 0.72 0.15 75;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Satoshi", "Cabinet Grotesk", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ============================================================
+   UTILITY CLASSES
+   ============================================================ */
+
+@layer utilities {
+  .font-display {
+    font-family: "Fraunces", Georgia, serif;
+  }
+
+  .font-body {
+    font-family: "Satoshi", system-ui, sans-serif;
+  }
+
+  .font-ui {
+    font-family: "Cabinet Grotesk", system-ui, sans-serif;
+  }
+
+  .text-gold {
+    color: oklch(var(--gold));
+  }
+
+  .bg-gold {
+    background-color: oklch(var(--gold));
+  }
+
+  .bg-gold-light {
+    background-color: oklch(var(--gold-light));
+  }
+
+  .text-forest {
+    color: oklch(var(--forest));
+  }
+
+  .bg-forest {
+    background-color: oklch(var(--forest));
+  }
+
+  .bg-forest-light {
+    background-color: oklch(var(--forest-light));
+  }
+
+  .text-cream {
+    color: oklch(var(--cream));
+  }
+
+  .bg-cream {
+    background-color: oklch(var(--cream));
+  }
+
+  .text-terracotta {
+    color: oklch(var(--terracotta));
+  }
+
+  .bg-terracotta {
+    background-color: oklch(var(--terracotta));
+  }
+
+  .gradient-gold {
+    background: linear-gradient(
+      135deg,
+      oklch(var(--gold-light)) 0%,
+      oklch(var(--gold)) 60%,
+      oklch(var(--gold-dark)) 100%
+    );
+  }
+
+  .gradient-forest {
+    background: linear-gradient(
+      135deg,
+      oklch(var(--forest-light)) 0%,
+      oklch(var(--forest)) 60%,
+      oklch(var(--forest-dark)) 100%
+    );
+  }
+
+  .grain-overlay {
+    position: relative;
+  }
+
+  .grain-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    border-radius: inherit;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .container-tight {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-0.5;
+    &:hover {
+      box-shadow: 0 8px 32px oklch(0.22 0.04 50 / 12%), 0 2px 8px oklch(0.22 0.04 50 / 8%), 0 0 0 1px oklch(0.78 0.16 75 / 0.15);
+    }
+  }
+
+  .whatsapp-green {
+    background-color: #25D366;
+  }
+}
